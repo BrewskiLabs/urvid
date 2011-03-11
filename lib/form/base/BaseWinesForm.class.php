@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Wines form base class.
+ *
+ * @method Wines getObject() Returns the current form's model object
+ *
+ * @package    wines
+ * @subpackage form
+ * @author     alex
+ */
+abstract class BaseWinesForm extends BaseFormPropel
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'          => new sfWidgetFormInputHidden(),
+      'lable'       => new sfWidgetFormInputText(),
+      'picture'     => new sfWidgetFormInputText(),
+      'description' => new sfWidgetFormTextarea(),
+    ));
+
+    $this->setValidators(array(
+      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->getId()), 'empty_value' => $this->getObject()->getId(), 'required' => false)),
+      'lable'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'picture'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'description' => new sfValidatorString(array('required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('wines[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'Wines';
+  }
+
+
+}
