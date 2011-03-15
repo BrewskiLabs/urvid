@@ -1,0 +1,13 @@
+sfGuardUserProfile:
+  columns:
+    description: string(255)
+    website: string(255)
+    image: string(255)
+    icon: string(255)
+  relations:
+    User:
+      class: sfGuardUser
+      local: id
+      foreign: id
+      foreignAlias: Profile
+      foreignType: one

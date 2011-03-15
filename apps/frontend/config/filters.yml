@@ -2,6 +2,10 @@
 # http://www.symfony-project.org/reference/1_4/en/12-Filters
 
 rendering: ~
+#remember_me:
+#  class: sfGuardRememberMeFilter
+#remember_me1:
+#  class: sfFacebookSecurityFilter
 security:  ~
 
 # insert your own filters here

@@ -15,6 +15,7 @@ abstract class BaseWinesForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
+      'user_id'     => new sfWidgetFormPropelChoice(array('model' => 'sfGuardUser', 'add_empty' => false)),
       'lable'       => new sfWidgetFormInputText(),
       'picture'     => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
@@ -22,6 +23,7 @@ abstract class BaseWinesForm extends BaseFormPropel
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->getId()), 'empty_value' => $this->getObject()->getId(), 'required' => false)),
+      'user_id'     => new sfValidatorPropelChoice(array('model' => 'sfGuardUser', 'column' => 'id')),
       'lable'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'picture'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),

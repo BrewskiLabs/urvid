@@ -13,10 +13,16 @@ DROP TABLE IF EXISTS `wines`;
 CREATE TABLE `wines`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`user_id` INTEGER  NOT NULL,
 	`lable` VARCHAR(255),
 	`picture` VARCHAR(255),
 	`description` TEXT,
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	INDEX `wines_FI_1` (`user_id`),
+	CONSTRAINT `wines_FK_1`
+		FOREIGN KEY (`user_id`)
+		REFERENCES `sf_guard_user` (`id`)
+		ON DELETE CASCADE
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
