@@ -2,7 +2,7 @@ propel:
 
   wines:
     id:                         ~
-#    user_id:                    { type: integer, required: true, foreignTable: sf_guard_user, foreignReference: id, onDelete: cascade }
+    user_id:                    { type: integer, required: true, foreignTable: sf_guard_user, foreignReference: id, onDelete: cascade }
     lable:                      { type: varchar, size: 255 }
     picture:                    { type: varchar, size: 255 }
     description:                { type: longvarchar }
