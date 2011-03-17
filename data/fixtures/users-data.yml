@@ -1,0 +1,6 @@
+sfGuardUser:
+  sfGuardUser_1:
+    username: admin
+    password: admin
+    is_active: 1
+    is_super_admin: 1
