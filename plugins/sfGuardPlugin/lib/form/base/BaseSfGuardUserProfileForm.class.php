@@ -19,8 +19,7 @@ abstract class BasesfGuardUserProfileForm extends BaseFormPropel
       'first_name'   => new sfWidgetFormInputText(),
       'last_name'    => new sfWidgetFormInputText(),
       'facebook_uid' => new sfWidgetFormInputText(),
-      'email'        => new sfWidgetFormInputText(),
-      'email_hash'   => new sfWidgetFormInputText(),
+      'type_login'   => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -29,17 +28,8 @@ abstract class BasesfGuardUserProfileForm extends BaseFormPropel
       'first_name'   => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'last_name'    => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'facebook_uid' => new sfValidatorString(array('max_length' => 20, 'required' => false)),
-      'email'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'email_hash'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'type_login'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorAnd(array(
-        new sfValidatorPropelUnique(array('model' => 'sfGuardUserProfile', 'column' => array('facebook_uid'))),
-        new sfValidatorPropelUnique(array('model' => 'sfGuardUserProfile', 'column' => array('email'))),
-        new sfValidatorPropelUnique(array('model' => 'sfGuardUserProfile', 'column' => array('email_hash'))),
-      ))
-    );
 
     $this->widgetSchema->setNameFormat('sf_guard_user_profile[%s]');
 

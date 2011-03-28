@@ -13,5 +13,5 @@
  * @package    lib.model
  */
 class WinePropertyName extends BaseWinePropertyName {
-
+    
 } // WinePropertyName

@@ -3,8 +3,4 @@
 
 # default values
 #all:
-all:
-  sf_twitter_auth:
-    consumer_key: 8AoHFs546ymFfjaQT2dmsQ
-    consumer_secret: U4odHSl0SlanGbwe8NX6nuVAHTAGmSG29Xg81eY
-    success_signin_url: http://wines.sitedevel.com/
+

@@ -299,7 +299,7 @@ class Facebook {
   }
 
   public static function current_url() {
-    return 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    return sfConfig::get('app_facebook_redirect_after_connect_url');
   }
 
   // require_add and require_install have been removed.
@@ -308,6 +308,8 @@ class Facebook {
     if ($user = $this->get_loggedin_user()) {
       return $user;
     }
+//    var_dump(self::current_url());
+//    die;
     $this->redirect($this->get_login_url(self::current_url(), $this->in_frame()));
   }
 

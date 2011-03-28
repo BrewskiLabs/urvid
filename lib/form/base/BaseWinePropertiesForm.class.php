@@ -14,15 +14,15 @@ abstract class BaseWinePropertiesForm extends BaseFormPropel
   public function setup()
   {
     $this->setWidgets(array(
+      'id'                     => new sfWidgetFormInputHidden(),
       'wine_id'                => new sfWidgetFormPropelChoice(array('model' => 'Wines', 'add_empty' => false)),
       'wine_property_value_id' => new sfWidgetFormPropelChoice(array('model' => 'WinePropertyValue', 'add_empty' => false)),
-      'id'                     => new sfWidgetFormInputHidden(),
     ));
 
     $this->setValidators(array(
+      'id'                     => new sfValidatorChoice(array('choices' => array($this->getObject()->getId()), 'empty_value' => $this->getObject()->getId(), 'required' => false)),
       'wine_id'                => new sfValidatorPropelChoice(array('model' => 'Wines', 'column' => 'id')),
       'wine_property_value_id' => new sfValidatorPropelChoice(array('model' => 'WinePropertyValue', 'column' => 'id')),
-      'id'                     => new sfValidatorChoice(array('choices' => array($this->getObject()->getId()), 'empty_value' => $this->getObject()->getId(), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('wine_properties[%s]');

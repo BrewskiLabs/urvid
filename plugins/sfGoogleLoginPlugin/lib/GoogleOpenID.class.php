@@ -60,21 +60,38 @@ class GoogleOpenID
      */
     public function getLoginUrl( $returnTo )
     {
+//'https://www.google.com/accounts/o8/ud
+//    ?openid.assoc_handle=AOQobUcQfPKH6SDJ57YOd2ky3Pz4WYgMkIN6zmKLZiU-_GFY8WS3XjRG
+//    &openid.ax.count.email=2
+//    &openid.ax.mode=fetch_request
+//    &openid.ax.required=email,firstname,lastname
+//    &openid.ax.type.email=http://axschema.org/contact/email
+//    &openid.ax.type.firstname=http://axschema.org/namePerson/first
+//    &openid.ax.type.lastname=http://axschema.org/namePerson/last
+//    &openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select
+//    &openid.identity=http://specs.openid.net/auth/2.0/identifier_select
+//    &openid.mode=checkid_setup
+//    &openid.ns=http://specs.openid.net/auth/2.0
+//    &openid.ns.ax=http://openid.net/srv/ax/1.0
+//    &openid.realm=http://wines.sitedevel.com/
+//    &openid.return_to=http://wines.sitedevel.com/frontend_dev.php/logins';
+
+
         $params = array(
-            'openid.ns' => 'http://specs.openid.net/auth/2.0',
-            'openid.mode' => 'checkid_setup',
-            'openid.return_to' => $returnTo,
+            'openid.assoc_handle' => $this->getHandle(),
+            'openid.ax.count.email' => 2,
+            'openid.ax.mode' => 'fetch_request',
+            'openid.ax.required' => 'email,firstname,lastname',
+            'openid.ax.type.email' => 'http://axschema.org/contact/email',
+            'openid.ax.type.firstname' => 'http://axschema.org/namePerson/first',
+            'openid.ax.type.lastname' => 'http://axschema.org/namePerson/last',
             'openid.claimed_id' => 'http://specs.openid.net/auth/2.0/identifier_select',
             'openid.identity' => 'http://specs.openid.net/auth/2.0/identifier_select',
-            'openid.realm' => $this->realm,
-            'openid.trust_root' => $this->realm,
-            'openid.assoc_handle' => $this->getHandle(),
-            'openid.ns.ext1' => 'http://openid.net/srv/ax/1.0',
-            'openid.ext1.mode' => 'fetch_request',
-            'openid.ext1.type.email' => 'http://axschema.org/contact/email',
-            'openid.ext1.if_available' => 'email',
-            'openid.ns.sreg' => 'http://openid.net/sreg/1.0',
-            'openid.sreg.optional' => 'email',
+            'openid.mode' => 'checkid_setup',
+            'openid.ns' => 'http://specs.openid.net/auth/2.0',
+            'openid.ns.ax' => 'http://openid.net/srv/ax/1.0',
+            'openid.realm' =>  $this->realm.'/',
+            'openid.return_to' => $returnTo
         );
         $url = $this->buildReqeustUrl( $params );
         return $url;

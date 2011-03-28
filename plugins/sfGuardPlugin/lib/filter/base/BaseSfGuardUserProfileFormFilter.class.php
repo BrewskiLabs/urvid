@@ -16,8 +16,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterPropel
       'first_name'   => new sfWidgetFormFilterInput(),
       'last_name'    => new sfWidgetFormFilterInput(),
       'facebook_uid' => new sfWidgetFormFilterInput(),
-      'email'        => new sfWidgetFormFilterInput(),
-      'email_hash'   => new sfWidgetFormFilterInput(),
+      'type_login'   => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -25,8 +24,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterPropel
       'first_name'   => new sfValidatorPass(array('required' => false)),
       'last_name'    => new sfValidatorPass(array('required' => false)),
       'facebook_uid' => new sfValidatorPass(array('required' => false)),
-      'email'        => new sfValidatorPass(array('required' => false)),
-      'email_hash'   => new sfValidatorPass(array('required' => false)),
+      'type_login'   => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('sf_guard_user_profile_filters[%s]');
@@ -49,8 +47,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterPropel
       'first_name'   => 'Text',
       'last_name'    => 'Text',
       'facebook_uid' => 'Text',
-      'email'        => 'Text',
-      'email_hash'   => 'Text',
+      'type_login'   => 'Text',
     );
   }
 }

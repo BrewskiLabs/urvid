@@ -18,5 +18,6 @@ propel:
     name:                       { type: varchar, size: 255 }
 
   wine_properties:
+    id:                         ~
     wine_id:                    { type: integer, required: true, foreignTable: wines, foreignReference: id, onDelete: cascade }
     wine_property_value_id:     { type: integer, required: true, foreignTable: wine_property_value, foreignReference: id, onDelete: cascade }

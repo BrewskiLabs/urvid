@@ -94,12 +94,8 @@ CREATE TABLE `sf_guard_user_profile`
 	`first_name` VARCHAR(30),
 	`last_name` VARCHAR(30),
 	`facebook_uid` VARCHAR(20),
-	`email` VARCHAR(255),
-	`email_hash` VARCHAR(255),
+	`type_login` VARCHAR(255),
 	PRIMARY KEY (`id`),
-	UNIQUE KEY `facebook_uid_index` (`facebook_uid`),
-	UNIQUE KEY `email_index` (`email`),
-	UNIQUE KEY `email_hash_index` (`email_hash`),
 	INDEX `sf_guard_user_profile_FI_1` (`user_id`),
 	CONSTRAINT `sf_guard_user_profile_FK_1`
 		FOREIGN KEY (`user_id`)

@@ -30,8 +30,8 @@ all:
     # Output escaping settings
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
-    
-    enabled_modules:        [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission, sfGoogleLogin, sfTwitterAuth, sfFacebookConnectAuth]
+    #, sfGoogleLogin, sfTwitterAuth, sfFacebookConnectAuth, sfOpenIDAuth
+    enabled_modules:        [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission]
     login_module:           sfGuardAuth
     login_action:           signin
 

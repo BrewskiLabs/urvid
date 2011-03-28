@@ -36,6 +36,7 @@ class BasesfFacebookConnectAuthActions extends sfActions
    */
   public function executeSignin()
   {
+
     $user = $this->getUser();
     
     // first check if user is already logged and not yet Facebook connected

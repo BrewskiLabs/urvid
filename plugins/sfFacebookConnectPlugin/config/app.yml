@@ -5,8 +5,9 @@ all:
     api_secret: d30adb5ee1c0c0b8e581864e07c1a47c
     api_id: 132022376870688
     redirect_after_connect: false
-    redirect_after_connect_url: ''
-    connect_signin_url: 'sfFacebookConnectAuth/signin'
+    redirect_after_connect_url: 'http://wines.sitedevel.com/frontend_dev.php/facebook_response'
+    connect_signin_url: '/facebook_response'
+    profile: 'https://graph.facebook.com/'
     app_url: '/my-app'
     guard_adapter: ~
     js_framework: none # none, jQuery or prototype.

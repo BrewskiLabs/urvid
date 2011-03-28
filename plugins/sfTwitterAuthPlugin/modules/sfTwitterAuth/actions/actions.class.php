@@ -22,7 +22,7 @@ class sfTwitterAuthActions extends sfActions {
         /* Create TwitterOAuth object with app key/secret */
         $connection = new TwitterOAuth($consumer_key, $consumer_secret);
         /* Request tokens from twitter */
-        $tok = $connection->getRequestToken($this->getController()->genUrl(array('sf_route' => 'login'), true));
+        $tok = $connection->getRequestToken($this->getController()->genUrl(array('sf_route' => 'twitter_login'), true));
 
         /* Save tokens for later */
         $user->setAttribute('oauth_request_token', $tok['oauth_token'], 'sfTwitterAuth');
@@ -51,6 +51,7 @@ class sfTwitterAuthActions extends sfActions {
         $result = $connection->get('account/verify_credentials');
 
         if ($result->id) {
+            die;
           $guardUser = Doctrine::getTable('sfGuardUser')->findOneById($result->id);
 
           if (!$guardUser) {

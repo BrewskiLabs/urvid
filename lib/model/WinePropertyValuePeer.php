@@ -13,5 +13,16 @@
  * @package    lib.model
  */
 class WinePropertyValuePeer extends BaseWinePropertyValuePeer {
-
+    public static function getChoices($property_id, $forAjax=false){
+        $criteria = new Criteria();
+        $criteria->add(self::PROPERTY_ID, $property_id);
+        $objects = self::doSelect($criteria);
+        if (!$forAjax) return $objects;
+        $item = new WinePropertyValue();
+        $result = array();
+        foreach ($objects as $item) {
+            $result[] = array('text'=>$item->getName(), 'value'=>$item->getId());
+        }
+        return $result;
+    }
 } // WinePropertyValuePeer

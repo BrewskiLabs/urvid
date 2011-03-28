@@ -1,3 +1,51 @@
+wines:
+  class: sfPropelRouteCollection
+  options:
+    model:                wines
+    module:               wines
+    prefix_path:          /wines
+    column:               id
+    with_wildcard_routes: true
+
+wine_property_name:
+  class: sfPropelRouteCollection
+  options:
+    model:                WinePropertyName
+    module:               wineproperties
+    prefix_path:          /wineproperties
+    column:               id
+    with_wildcard_routes: true
+
+#/:property_name_id
+add_wine_property_value:
+  url:   /wineproperties/add/:property_name_id
+  param: { module: wineproperties, action: AddWinePropertyValue }
+
+save_wine_property_value:
+  url:   /wineproperties/save
+  param: { module: wineproperties, action: SaveWinePropertyValue }
+
+add_wines_property_name:
+  url:   /wines/add/:wines_id
+  param: { module: wines, action: AddWinePropertyName }
+
+save_wines_property_value:
+  url:   /wines/save
+  param: { module: wines, action: SaveWinesPropertyValue }
+
+get_wines_property_values:
+  url:   /wines/getpr/:property_name_id
+  param: { module: wines, action: GetWinePropertyValue }
+
+#wineproperties:
+#  class: sfPropelRouteCollection
+#  options:
+#    model:                wineproperties
+#    module:               wineproperties
+#    prefix_path:          /wineproperties
+#    column:               id
+#    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 

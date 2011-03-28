@@ -14,4 +14,7 @@
  */
 class WinePropertyValue extends BaseWinePropertyValue {
 
+    public function  __toString() {
+    }
+
 } // WinePropertyValue

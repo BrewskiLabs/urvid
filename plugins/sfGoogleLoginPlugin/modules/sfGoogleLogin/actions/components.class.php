@@ -21,10 +21,10 @@ class sfGoogleLoginComponents extends sfComponents {
         } else {
 	        $request = $this->getContext()->getRequest();
 	        $googleOpenID = new GoogleOpenID( sfContext::getInstance()->getRequest()->getUriPrefix() );
-	        
+                $googleOpenID->getLoginUrl('http://wines.sitedevel.com/frontend_dev.php/logins');
 	        $user->setAttribute('sfGoogleLogin_returnTo', $request->getUri() );
 	        $returnTo = $this->generateUrl('sfGoogleLogin_verify', array(), true);
-	        
+                $returnTo = 'http://wines.sitedevel.com/frontend_dev.php/logins';
 	        $this->loginUrl = $googleOpenID->getLoginUrl( $returnTo );
         }        
     }

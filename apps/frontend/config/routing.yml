@@ -2,10 +2,13 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
-home:
+homepage:
   url:   /
   param: { module: homepage, action: index }
 
+logins:
+  url:   /logins
+  param: { module: logins, action: loginForm }
 # generic rules
 # please, remove them by adding more specific rules
 #default_index:
@@ -14,6 +17,26 @@ home:
 
 #default:
 #  url:   /:module/:action/*
+
+google_response:
+  url: /google_response/*
+  param: {module: logins, action: googleResponse}
+
+twitter_response:
+  url: /twitter_response/*
+  param: {module: logins, action: twitterResponse}
+
+facebook_response:
+  url: /facebook_response/*
+  param: {module: logins, action: facebookResponse}
+
+#twitter_login:
+#  url: /twitter_login
+#  param: {module: sfTwitterAuth, action: login}
+#
+#facebook_login:
+#  url: /facebook_login
+#  param: {module: sfFacebookConnectAuth, action: signin}
 
 sf_guard_signin:
   url:   /login

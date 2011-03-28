@@ -3,3 +3,5 @@ symfony/
 config/ProjectConfiguration.class.php
 config/databases.yml
 .svn/
+
+nbproject/

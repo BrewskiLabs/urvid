@@ -37,12 +37,13 @@ propel:
     first_name:         { type: varchar, size: 30 }
     last_name:          { type: varchar, size: 30 }
     facebook_uid:       { type: varchar, size: 20 }
-    email:              { type: varchar, size: 255 }
-    email_hash:         { type: varchar, size: 255 }
-    _uniques:
-      facebook_uid_index: [facebook_uid]
-      email_index:        [email]
-      email_hash_index:   [email_hash]
+#    email:              { type: varchar, size: 255 }
+#    email_hash:         { type: varchar, size: 255 }
+    type_login:         { type: varchar, size: 255 }
+#    _uniques:
+#      facebook_uid_index: [facebook_uid]
+#      email_index:        [email]
+#      email_hash_index:   [email_hash]
   
   sf_guard_user_permission:
     _attributes:    { phpName: sfGuardUserPermission }

@@ -69,9 +69,9 @@ DROP TABLE IF EXISTS `wine_properties`;
 
 CREATE TABLE `wine_properties`
 (
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`wine_id` INTEGER  NOT NULL,
 	`wine_property_value_id` INTEGER  NOT NULL,
-	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (`id`),
 	INDEX `wine_properties_FI_1` (`wine_id`),
 	CONSTRAINT `wine_properties_FK_1`

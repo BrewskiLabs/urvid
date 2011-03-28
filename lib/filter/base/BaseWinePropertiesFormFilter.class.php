@@ -36,9 +36,9 @@ abstract class BaseWinePropertiesFormFilter extends BaseFormFilterPropel
   public function getFields()
   {
     return array(
+      'id'                     => 'Number',
       'wine_id'                => 'ForeignKey',
       'wine_property_value_id' => 'ForeignKey',
-      'id'                     => 'Number',
     );
   }
 }

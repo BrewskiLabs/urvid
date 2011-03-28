@@ -1,0 +1,17 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#all:
+all:
+  type_google: google
+  type_twitter: twitter
+  type_facebook: facebook
+
+  sf_twitter_auth:
+    consumer_key: 8AoHFs546ymFfjaQT2dmsQ
+    consumer_secret: U4odHSl0SlanGbwe8NX6nuVAHTAGmSG29Xg81eY
+    success_signin_url: http://wines.sitedevel.com/twitter_response
+
+  sf_google:
+    success_signin_url: 'http://wines.sitedevel.com/frontend_dev.php/google_response'

@@ -11,5 +11,6 @@ class WinePropertyValueForm extends BaseWinePropertyValueForm
 {
   public function configure()
   {
+      $this->widgetSchema['property_id'] = new sfWidgetFormInputHidden();
   }
 }

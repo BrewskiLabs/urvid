@@ -10,6 +10,7 @@
 class sfGoogleLoginActions extends sfActions {
 
 	public function executeLogin(sfWebRequest $request) {
+            
         if ( $this->getUser()->isAuthenticated() ) {
             $this->redirect('homepage');
         }
@@ -20,9 +21,10 @@ class sfGoogleLoginActions extends sfActions {
         
         $user->setAttribute('sfGoogleLogin_returnTo', $request->getUri() );
         $returnTo = $this->generateUrl('sfGoogleLogin_verify', array(), true);
-        
+        $returnTo = 'http://wines.sitedevel.com/frontend_dev.php/logins';
         $this->loginUrl = $googleOpenID->getLoginUrl( $returnTo );
-        $this->loginJs = $googleOpenID->getLoginJs( $returnTo );
+        //$this->redirect($this->loginUrl);
+        //return $this->loginUrl;
 	}
 	
 	public function executeVerify(sfWebRequest $request) {
@@ -32,6 +34,7 @@ class sfGoogleLoginActions extends sfActions {
         $googleOpenID = new GoogleOpenID( 'http://'.$_SERVER['SERVER_NAME'] );
         
         if ( $googleOpenID->verifyLogin() && $googleUserToken = $googleOpenID->getUser() ) {
+            //die('11');
             if ( !$googleAccount = Doctrine::getTable('GoogleAccount')->findOneByUserToken( $googleUserToken ) ) {
                 $googleAccount = new GoogleAccount();
                 $googleAccount->setUserToken( $googleUserToken );

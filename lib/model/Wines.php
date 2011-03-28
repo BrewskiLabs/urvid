@@ -14,4 +14,7 @@
  */
 class Wines extends BaseWines {
 
+    public function  __toString() {
+    }
+
 } // Wines
