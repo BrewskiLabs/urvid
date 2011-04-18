@@ -7,6 +7,8 @@ all:
   type_google: google
   type_twitter: twitter
   type_facebook: facebook
+  max_search_limit: 1
+  upload_dir: uploads
 
   sf_twitter_auth:
     consumer_key: 8AoHFs546ymFfjaQT2dmsQ

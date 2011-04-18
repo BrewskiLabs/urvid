@@ -25,4 +25,10 @@ class WinePropertyValuePeer extends BaseWinePropertyValuePeer {
         }
         return $result;
     }
+
+    public static function getWinesValueId($id) {
+        $criteria = new Criteria();
+        $criteria->add(self::PROPERTY_ID, $id);
+        return self::doSelect($criteria);
+    }
 } // WinePropertyValuePeer

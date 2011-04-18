@@ -6,6 +6,7 @@ propel:
     lable:                      { type: varchar, size: 255 }
     picture:                    { type: varchar, size: 255 }
     description:                { type: longvarchar }
+    year:                       { type: integer, size: 11}
     
   wine_property_name:
     id:                         ~

@@ -9,14 +9,18 @@ homepage:
 logins:
   url:   /logins
   param: { module: logins, action: loginForm }
-# generic rules
-# please, remove them by adding more specific rules
-#default_index:
-#  url:   /:module
-#  param: { action: index }
 
-#default:
-#  url:   /:module/:action/*
+search:
+  url:   /search
+  param: { module: search, action: index }
+
+search_result:
+  url:   /search_result
+  param: { module: search, action: searchResult }
+
+search_page:
+  url:   /search_page/:page
+  param: { module: search, action: searchResult }
 
 google_response:
   url: /google_response/*
@@ -38,13 +42,13 @@ facebook_response:
 #  url: /facebook_login
 #  param: {module: sfFacebookConnectAuth, action: signin}
 
-sf_guard_signin:
-  url:   /login
-  param: { module: sfGuardAuth, action: signin }
-
-sf_guard_signout:
-  url:   /logout
-  param: { module: sfGuardAuth, action: signout }
+#sf_guard_signin:
+#  url:   /login
+#  param: { module: sfGuardAuth, action: signin }
+#
+#sf_guard_signout:
+#  url:   /logout
+#  param: { module: sfGuardAuth, action: signout }
 
 default:
   url:   /:module/:action/*

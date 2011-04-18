@@ -17,6 +17,7 @@ CREATE TABLE `wines`
 	`lable` VARCHAR(255),
 	`picture` VARCHAR(255),
 	`description` TEXT,
+	`year` INTEGER(11),
 	PRIMARY KEY (`id`),
 	INDEX `wines_FI_1` (`user_id`),
 	CONSTRAINT `wines_FK_1`

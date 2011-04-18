@@ -19,6 +19,7 @@ abstract class BaseWinesForm extends BaseFormPropel
       'lable'       => new sfWidgetFormInputText(),
       'picture'     => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
+      'year'        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -27,6 +28,7 @@ abstract class BaseWinesForm extends BaseFormPropel
       'lable'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'picture'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
+      'year'        => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('wines[%s]');

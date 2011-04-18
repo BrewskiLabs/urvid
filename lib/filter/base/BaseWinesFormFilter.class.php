@@ -16,6 +16,7 @@ abstract class BaseWinesFormFilter extends BaseFormFilterPropel
       'lable'       => new sfWidgetFormFilterInput(),
       'picture'     => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
+      'year'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -23,6 +24,7 @@ abstract class BaseWinesFormFilter extends BaseFormFilterPropel
       'lable'       => new sfValidatorPass(array('required' => false)),
       'picture'     => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
+      'year'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('wines_filters[%s]');
@@ -45,6 +47,7 @@ abstract class BaseWinesFormFilter extends BaseFormFilterPropel
       'lable'       => 'Text',
       'picture'     => 'Text',
       'description' => 'Text',
+      'year'        => 'Number',
     );
   }
 }
